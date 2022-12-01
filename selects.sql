@@ -1,6 +1,5 @@
 -- Aqui você deve colocar os códigos SQL referentes às
 -- Seleções de dados
-
 -- 1)
 SELECT 
 pedidos.id,
@@ -12,7 +11,6 @@ produtos.tipo,
 produtos.preco,
 produtos.pts_de_lealdade
 FROM  produtos,pedidos,clientes WHERE pedidos.id = clientes.id;
-
 -- 2)
 SELECT
 clientes.nome
@@ -21,7 +19,6 @@ JOIN produtos_pedidos ON pedidos.id = produtos_pedidos.pedido_id
 JOIN produtos ON produtos.id = produtos_pedidos.produto_id 
 JOIN clientes ON  clientes.id = pedidos.cliente_id
 WHERE produtos.nome = 'Fritas';
-
 -- 3)
 SELECT
 pedidos.id
@@ -38,7 +35,6 @@ JOIN pedidos ON pedidos.id = produtos_pedidos.pedido_id
 JOIN clientes ON clientes.id = produtos_pedidos.pedido_id
 WHERE clientes.nome = 'Laura'
 -- 5)
-
 SELECT 
   produtos.nome,
   count(produtos.id)
