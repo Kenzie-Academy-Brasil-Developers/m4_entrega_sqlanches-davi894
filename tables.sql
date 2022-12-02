@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS enderecos(
  complemento VARCHAR(100),
  cliente_id INTEGER UNIQUE NOT NULL,
  FOREIGN KEY (cliente_id) REFERENCES clientes(id)
- ON DELETE CASCADE
+ ON DELETE CASCADE 
  );
 -- Tabela pedidos
 CREATE TABLE IF NOT EXISTS pedidos(
@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS produtos_pedidos(
  id BIGSERIAL PRIMARY KEY,
  pedido_id INTEGER NOT NULL,
  produto_id INTEGER NOT NULL,
- FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
+ FOREIGN KEY (pedido_id) REFERENCES pedidos(id)
+ ON DELETE CASCADE,
  FOREIGN KEY (produto_id) REFERENCES produtos(id)
+ ON DELETE CASCADE 
  );

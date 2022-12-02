@@ -33,7 +33,7 @@ FROM produtos
 JOIN produtos_pedidos ON produtos.id = produtos_pedidos.produto_id
 JOIN pedidos ON pedidos.id = produtos_pedidos.pedido_id
 JOIN clientes ON clientes.id = produtos_pedidos.pedido_id
-WHERE clientes.nome = 'Laura'
+WHERE clientes.nome = 'Laura';
 -- 5)
 SELECT 
   produtos.nome,

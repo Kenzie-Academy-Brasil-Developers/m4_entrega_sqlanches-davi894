@@ -46,7 +46,7 @@ UPDATE
 SET
   lealdade = 48
 WHERE 
-  clientes.nome = 'Georgia' RETURNING *;
+  clientes.nome = (SELECT nome FROM clientes WHERE clientes.nome = 'Georgia') RETURNING *;
 -- Deleção
 -- 1)
 DELETE FROM
